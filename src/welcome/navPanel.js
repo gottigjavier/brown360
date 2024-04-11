@@ -7,13 +7,12 @@ import {
   asset,
 } from 'react-360';
 
-export default class WelcomePanel extends React.Component {
+export default class NavPanel extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       image: {
-        src: 'logo-color.svg',
-        width: 400,
+        width: 100,
         height: 120
       }
     }
@@ -22,30 +21,18 @@ export default class WelcomePanel extends React.Component {
     const {image} = this.state;
     return (
       <View style={styles.panel}>
-        <Image source={asset(image.src)} style={{width:image.width, height:image.height}}/>
         <View style={styles.greetingBox}>
           <Text style={styles.greeting}>
             Comenzar
           </Text>
         </View>
         <View style={styles.advice}>
-          <Text>
-            Para una mejor experiencia
-          </Text>
-          <Text>
-            gire su móvil a posición apaisada.
-          </Text>
-        </View>
-        <View style={styles.nav}>
-          <Text style={styles.navBtn}>
-            Nav panel
-          </Text>
-          <Text style={styles.navBtn}>
-            Nav panel
-          </Text>
-          <Text style={styles.navBtn}>
-            Nav panel
-          </Text>
+        <Text>
+          Para una mejor experiencia
+        </Text>
+        <Text>
+          gire su móvil a posición apaisada.
+        </Text>
         </View>
       </View>
     );
@@ -55,8 +42,7 @@ export default class WelcomePanel extends React.Component {
 const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
-    flexDirection: 'column',
-    width: 800,
+    width: 200,
     height: 500,
     justifyContent: 'center',
     alignItems: 'center',
@@ -83,20 +69,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  nav: {
-    flexDirection: 'row',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    borderRadius: 5,
-    margin: 15,
-    padding: 10,
-    fontSize: 50,
-    opacity: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  navBtn: {
-    padding: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
 });

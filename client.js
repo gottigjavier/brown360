@@ -15,13 +15,38 @@ function init(bundle, parent, options = {}) {
     500,
     Surface.SurfaceShape.Cylinder
   );
-  wPanel.setAngle(0,0,0);
+
+  const leftPanel = new Surface(
+    200,
+    500,
+    Surface.SurfaceShape.Flat
+  );
+  leftPanel.setAngle(-0.7,0,0);
+
+  const rightPanel = new Surface(
+    200,
+    500,
+    Surface.SurfaceShape.Flat
+  );
+  rightPanel.setAngle(0.7,0,0);
 
 
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
-    r360.createRoot('welcomePanel', { /* initial props */ }),
+    r360.createRoot('welcomePanel',{ /* initial props */ }),
     wPanel
+  );
+
+  // Render your app content to the default cylinder surface
+  r360.renderToSurface(
+    r360.createRoot('navPanel',{ /* initial props */ }),
+    leftPanel
+  );
+
+  // Render your app content to the default cylinder surface
+  r360.renderToSurface(
+    r360.createRoot('navPanel',{ /* initial props */ }),
+    rightPanel
   );
 
   // Load the initial environment
