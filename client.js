@@ -11,10 +11,25 @@ function init(bundle, parent, options = {}) {
   });
 
   const wPanel = new Surface(
-    800,
-    500,
+    3500,
+    1500,
     Surface.SurfaceShape.Cylinder
   );
+  wPanel.setAngle(0,0,0);
+
+  const topPanel = new Surface(
+    820,
+    500,
+    Surface.SurfaceShape.Flat
+  );
+  topPanel.setAngle(0,0.32,0);
+
+  const bottomPanel = new Surface(
+    865,
+    500,
+    Surface.SurfaceShape.Flat
+  );
+  bottomPanel.setAngle(0,-0.72,0);
 
   const leftPanel = new Surface(
     200,
@@ -35,6 +50,18 @@ function init(bundle, parent, options = {}) {
   r360.renderToSurface(
     r360.createRoot('welcomePanel',{ /* initial props */ }),
     wPanel
+  );
+
+  // Render your app content to the default cylinder surface
+  r360.renderToSurface(
+    r360.createRoot('topPanel',{ /* initial props */ }),
+    topPanel
+  );
+
+  // Render your app content to the default cylinder surface
+  r360.renderToSurface(
+    r360.createRoot('bottomPanel',{ /* initial props */ }),
+    bottomPanel
   );
 
   // Render your app content to the default cylinder surface

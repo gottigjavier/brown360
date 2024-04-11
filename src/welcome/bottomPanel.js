@@ -7,13 +7,13 @@ import {
   asset,
 } from 'react-360';
 
-export default class NavPanel extends React.Component {
+export default class BottomPanel extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       image: {
-        width: 100,
-        height: 120
+        width: 400,
+        height: 100
       }
     }
   }
@@ -23,10 +23,7 @@ export default class NavPanel extends React.Component {
       <View style={styles.panel}>
         <View style={styles.advice}>
         <Text>
-          Espacio para redes y
-        </Text>
-        <Text>
-          acceso a otras secciones
+          Espacio para redes y acceso a otras secciones
         </Text>
         </View>
       </View>
@@ -37,8 +34,8 @@ export default class NavPanel extends React.Component {
 const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
-    width: 200,
-    height: 500,
+    width: 1000,
+    height: 200,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.3)',

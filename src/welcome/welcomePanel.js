@@ -13,15 +13,16 @@ export default class WelcomePanel extends React.Component {
     this.state = {
       image: {
         src: 'logo-color.svg',
-        width: 400,
-        height: 120
+        width: 800,
+        height: 300
       }
     }
   }
   render() {
     const {image} = this.state;
     return (
-      <View style={styles.panel}>
+      <View style={styles.panel}
+      >
         <Image source={asset(image.src)} style={{width:image.width, height:image.height}}/>
         <View style={styles.greetingBox}>
           <Text style={styles.greeting}>
@@ -37,15 +38,15 @@ export default class WelcomePanel extends React.Component {
           </Text>
         </View>
         <View style={styles.nav}>
-          <Text style={styles.navBtn}>
-            Nav panel
-          </Text>
-          <Text style={styles.navBtn}>
-            Nav panel
-          </Text>
-          <Text style={styles.navBtn}>
-            Nav panel
-          </Text>
+            <Text style={styles.navBtn}>
+              Anterior
+            </Text>
+            <Text style={styles.navBtn2}>
+              Inicio
+            </Text>
+            <Text style={styles.navBtn1}>
+              Siguiente
+            </Text>
         </View>
       </View>
     );
@@ -56,11 +57,16 @@ const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
     flexDirection: 'column',
-    width: 800,
-    height: 500,
+    width: 3500,
+    height: 1500,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    transform: [
+      { translate: [10, 1.5, 10] },
+      { scale: 1 },
+      { rotateY: 0 }
+  ],
   },
   greetingBox: {
     margin: 20,
@@ -84,19 +90,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   nav: {
-    flexDirection: 'row',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
     borderRadius: 5,
     margin: 15,
     padding: 10,
+    paddingLeft: 25,
     fontSize: 50,
     opacity: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
+    flexDirection: 'row',
   },
   navBtn: {
+    borderColor: 'white',
+    borderWidth: 2,
     padding: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+  },
+  navBtn1: {
+    borderColor: 'white',
+    borderWidth: 2,
+    padding: 8,
+    marginTop: 2,
+  },
+  navBtn2: {
+    borderColor: 'white',
+    borderWidth: 2,
+    padding: 10,
+    marginTop: 1,
+  },
 });
