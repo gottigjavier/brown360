@@ -77,7 +77,7 @@ function init(bundle, parent, options = {}) {
   );
 
   // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL('hotel-ext111.avif'));
+  r360.compositor.setBackground(r360.getAssetURL('//backgrounds/hotel-ext111.avif'));
 }
 
 window.React360 = {init};
