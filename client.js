@@ -11,89 +11,19 @@ function init(bundle, parent, options = {}) {
   });
 
   const wPanel = new Surface(
-    1000,
-    600,
+    4096,
+    720,
     Surface.SurfaceShape.Cylinder
   );
   wPanel.setAngle(0,0,0);
 
-  const initButton = new Surface(
-    865,
-    500,
-    Surface.SurfaceShape.Cylinder
-  );
-  initButton.setAngle(0,0,0);
-
-  const topPanel = new Surface(
-    820,
-    500,
-    Surface.SurfaceShape.Flat
-  );
-  topPanel.setAngle(0,0.32,0);
-
-  const bottomPanel = new Surface(
-    865,
-    500,
-    Surface.SurfaceShape.Flat
-  );
-  bottomPanel.setAngle(0,-0.72,0);
-
-  const leftPanel = new Surface(
-    200,
-    500,
-    Surface.SurfaceShape.Flat
-  );
-  leftPanel.setAngle(-0.7,0,0);
-
-  const rightPanel = new Surface(
-    200,
-    500,
-    Surface.SurfaceShape.Flat
-  );
-  rightPanel.setAngle(0.7,0,0);
-
-
+  
   // Render your app content to the default cylinder surface
-  r360.renderToSurface(
+  const welcome = r360.renderToSurface(
     r360.createRoot('welcomePanel',{ /* initial props */ }),
     wPanel
   );
-
-  // Render your app content to the default cylinder surface
-  //r360.renderToSurface(
-  //  r360.createRoot('initButton',{ /* initial props */ }),
-  //  wPanel
-  //);
-
-  //r360.renderToLocation(
-  //  r360.createRoot('initButton'),
-  //  new Location([0, 0, -950]),
-  //);
-
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('topPanel',{ /* initial props */ }),
-    topPanel
-  );
-
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('bottomPanel',{ /* initial props */ }),
-    bottomPanel
-  );
-
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('navPanel',{ /* initial props */ }),
-    leftPanel
-  );
-
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('navPanel',{ /* initial props */ }),
-    rightPanel
-  );
-
+  
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('//backgrounds/hotel-ext111.avif'));
 }
