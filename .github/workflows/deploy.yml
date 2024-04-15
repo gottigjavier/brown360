@@ -9,14 +9,13 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    runs:
+      using: 'node20'
+      main: 'main.js'
 
     permissions:
       id-token: write # Needed for auth with Deno Deploy
       contents: read # Needed to clone the repository
-
-    runs:
-      using: 'node20'
-      main: 'main.js'
 
     steps:
       - name: Clone repository
