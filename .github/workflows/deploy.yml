@@ -5,9 +5,10 @@ on:
   pull_request:
     branches: main
 
-jobs:
-  runs:
+runs:
   using: 'node20'
+
+jobs:
   
   deploy:
     name: Deploy
