@@ -6,6 +6,9 @@ on:
     branches: main
 
 jobs:
+  runs:
+  using: 'node20'
+  
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -14,8 +17,7 @@ jobs:
       id-token: write # Needed for auth with Deno Deploy
       contents: read # Needed to clone the repository
 
-  runs:
-    using: 'node20'
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
