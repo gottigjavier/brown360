@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: lts/*
 
+      - name: use legacy React
+        run: "export NODE_OPTIONS=--openssl-legacy-provider"
+
       - name: Install step
         run: "npm install"
 
